@@ -8,11 +8,22 @@ return {
     "MunifTanjim/nui.nvim",
   },
   keys = {
-    { "<leader>e", ":Neotree toggle right<CR>", desc = "File tree" },
-    { "<leader>bf", ":Neotree buffers<CR>", desc = "Buffers" },
-    { "<leader>gf", ":Neotree git_status<CR>", desc = "Git status" },
+    {
+      "<leader>e",
+      function()
+        if vim.bo.filetype == "neo-tree" then
+          vim.cmd("Neotree close")
+        else
+          vim.cmd("Neotree focus right")
+        end
+      end,
+      desc = "File tree",
+    },
+    { "<leader>gs", ":Neotree git_status<CR>", desc = "Git status" },
   },
   config = function()
+    local ignore = require("config.ignore")
+
     require("neo-tree").setup({
       close_if_last_window = false,
       popup_border_style = "rounded",
@@ -35,8 +46,9 @@ return {
         use_libuv_file_watcher = true,
         filtered_items = {
           visible = false,
-          hide_dotfiles = true,
+          hide_dotfiles = false,
           hide_gitignored = true,
+          hide_by_name = ignore.neo_tree_by_name,
         },
       },
       buffers = { follow_current_file = true },
