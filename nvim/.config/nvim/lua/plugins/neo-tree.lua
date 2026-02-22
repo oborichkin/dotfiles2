@@ -51,7 +51,7 @@ return {
           hide_by_name = ignore.neo_tree_by_name,
         },
       },
-      buffers = { follow_current_file = true },
+      buffers = { follow_current_file = { enabled = true } },
       git_status = { window = { position = "float" } },
     })
   end,
