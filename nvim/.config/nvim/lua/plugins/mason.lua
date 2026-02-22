@@ -11,37 +11,68 @@ return {
       ui = { border = "rounded" },
     })
 
-    require("mason-lspconfig").setup({
-      ensure_installed = { "lua_ls" },
-    })
-
-    -- LSP configuration
     local lspconfig = require("lspconfig")
 
-    -- Lua LS setup for Neovim Lua development
-    lspconfig.lua_ls.setup({
-      settings = {
-        Lua = {
-          runtime = {
-            version = "LuaJIT",
-            path = vim.split(package.path, ";"),
-          },
-          diagnostics = {
-            enable = true,
-            globals = { "vim" },
-            disable = { "missing-fields" },
-          },
-          workspace = {
-            library = {
-              [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-              [vim.fn.expand("~/.config/nvim/lua")] = true,
+    require("mason-lspconfig").setup({
+      ensure_installed = { "lua_ls", "ruff", "basedpyright" },
+      handlers = {
+        -- Default handler for all servers
+        function(server_name)
+          lspconfig[server_name].setup({})
+        end,
+
+        -- Lua LS specific configuration
+        lua_ls = function()
+          lspconfig.lua_ls.setup({
+            settings = {
+              Lua = {
+                runtime = {
+                  version = "LuaJIT",
+                  path = vim.split(package.path, ";"),
+                },
+                diagnostics = {
+                  enable = true,
+                  globals = { "vim" },
+                  disable = { "missing-fields" },
+                },
+                workspace = {
+                  library = {
+                    [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+                    [vim.fn.expand("~/.config/nvim/lua")] = true,
+                  },
+                  maxPreload = 2000,
+                  preloadFileSize = 1000,
+                },
+                telemetry = { enable = false },
+                hint = { enable = true },
+              },
             },
-            maxPreload = 2000,
-            preloadFileSize = 1000,
-          },
-          telemetry = { enable = false },
-          hint = { enable = true },
-        },
+          })
+        end,
+
+        -- Ruff for fast linting and formatting
+        ruff = function()
+          lspconfig.ruff.setup({})
+        end,
+
+        -- BasedPyright for IntelliSense (diagnostics disabled to avoid duplicates)
+        basedpyright = function()
+          lspconfig.basedpyright.setup({
+            on_attach = function(client, _)
+              -- Disable diagnostics from basedpyright (Ruff handles them)
+              client.server_capabilities.diagnosticProvider = false
+            end,
+            settings = {
+              basedpyright = {
+                analysis = {
+                  autoSearchPaths = true,
+                  diagnosticMode = "openFilesOnly",
+                  useLibraryCodeForTypes = true,
+                },
+              },
+            },
+          })
+        end,
       },
     })
 
