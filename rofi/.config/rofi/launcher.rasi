@@ -1,0 +1,34 @@
+// TODO: Make gnome like app launcher
+
+configuration {
+    show-icons: true;
+    icon-theme: "Papirus";
+    display-drun: "🔎 ";
+    drun-display-format: " {name}";
+    disable-history: false;
+}
+
+@import "base.rasi"
+
+window {
+    width: 850px;
+}
+
+entry {
+    placeholder: "Search...";
+    blink: true;
+}
+
+inputbar {
+    children: [ prompt, entry ];
+    padding: 10px;
+}
+
+listview {
+    columns: 2;
+    lines: 7;
+}
+
+element {
+    border: 0.25em;
+}

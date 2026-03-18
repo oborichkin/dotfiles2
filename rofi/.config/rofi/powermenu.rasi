@@ -1,0 +1,17 @@
+@import "base.rasi"
+
+window {
+    width: 600px;
+}
+
+textbox-prompt-colon {
+    str: "⌛";
+}
+
+inputbar {
+    children: [ textbox-prompt-colon, prompt ];
+}
+
+element {
+    border: 0.5em;
+}

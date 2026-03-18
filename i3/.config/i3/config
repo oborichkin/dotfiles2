@@ -1,0 +1,47 @@
+set $mod Mod4
+
+font pango:BigBlueTermPlus Nerd Font,Cascadia Code,monospace 16
+
+floating_modifier $mod
+
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+bindsym $mod+s sticky toggle
+
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "0"
+
+bindsym $mod+Ctrl+Left workspace prev
+bindsym $mod+Ctrl+Right workspace next
+bindsym $mod+Tab workspace back_and_forth
+
+bindsym $mod+e layout toggle split
+bindsym $mod+t layout tabbed
+bindsym $mod+d floating toggle
+bindsym $mod+f fullscreen toggle
+
+for_window [class="Alacritty"] floating enable
+
+default_border pixel 0
+default_floating_border pixel 0
+
+bar {
+  status_command i3status
+}

@@ -1,0 +1,23 @@
+* {
+    font: "BigBlueTermPlus Nerd Font Mono 18";
+}
+
+
+listview {
+    margin: 25px 0 0 0;
+    lines: 5;
+}
+
+element-icon {
+    size: 2em;
+}
+
+element-text {
+    vertical-align: 0.5;
+}
+
+element selected,
+element-text selected,
+element-icon selected  {
+    border-radius: 15px;
+}

@@ -1,0 +1,17 @@
+#!/bin/bash
+
+set -e
+
+declare -A projects
+PROJECT_DIRS="$HOME/work/src:$HOME/dox/github"
+
+IFS=:
+for dir in $PROJECT_DIRS; do
+    while IFS= read -r proj; do
+	projects[$proj]=$(realpath $dir/$proj)
+    done <<< "$(ls -1 $dir)"
+done
+
+name=$(printf "%s\n" ${!projects[*]} | rofi -dmenu)
+
+[ -z "$name" ] && exit 0 || code ${projects[$name]}

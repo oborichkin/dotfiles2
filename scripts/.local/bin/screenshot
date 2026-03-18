@@ -1,0 +1,9 @@
+#!/bin/bash
+
+case $1 in
+	region)
+		maim -s -u | xclip -selection clipboard -t image/png -i
+		;;
+	*)
+		maim -u | xclip -selection clipboard -t image/png -i
+esac
