@@ -1,6 +1,6 @@
 # terminal emulator
 super + Return
-	$TERMINAL
+	alacritty
 
 # program launcher
 alt + @space

@@ -1,5 +1,5 @@
 all: tpm
-	stow i3 nvim rofi scripts sxhkd tmux -t $$HOME
+	stow i3 nvim rofi scripts sxhkd tmux x zsh -t $$HOME
 
 tpm: ~/.config/tmux/plugins/tpm
 ~/.config/tmux/plugins/tpm:

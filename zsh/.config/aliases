@@ -1,0 +1,11 @@
+alias tmuxconf="vim ~/.config/tmux/tmux.conf"
+alias i3conf="vim ~/.config/i3/config"
+alias i3confstat="vim ~/.config/i3status/config"
+alias vimconf="vim ~/.config/nvim/init.vim"
+alias zshconf="vim ~/.config/zsh/.zshrc"
+
+alias ss="sudo systemctl"
+alias dc="docker compose"
+alias ll="ls -lah"
+alias copy="xclip -sel clip"
+alias vim="nvim"
