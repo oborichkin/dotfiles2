@@ -1,41 +1,6 @@
-# terminal emulator
-super + Return
-	alacritty
-
-# lock screen
-super + shift + x
-	lock-screen
-
-# program launcher
-alt + @space
-	launcher
-
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd & i3-msg reload
-
-# Screenshot
-Print
-	screenshot
-
-shift + Print
-	screenshot region
-
-# Emoji menu
-super + shift + m
-	rofi -modi emoji -show emoji -no-disable-history
-
-# Workon
-super + shift + p
-	workon
-
-# Open YouTrack issue
-super + y
-	yt-open-issue
-
-# Logout
-super + shift + e
-	i3-msg exit
 
 # Sound
 XF86Audio{Raise,Lower}Volume
@@ -52,13 +17,3 @@ XF86Audio{Play,Next,Prev}
 
 XF86MonBrightness{Up,Down}
 	xbacklight -{inc,dec} 5
-
-# Window Managment
-super + {1,2,3,4,5,6,7,8,9,0}
-    i3-msg workspace {1,2,3,4,5,6,7,8,9,0}
-
-super + shift + {1,2,3,4,5,6,7,8,9,0}
-    i3-msg move container to workspace {1,2,3,4,5,6,7,8,9,0}
-
-super + shift + q
-    xdotool getwindowfocus windowclose
