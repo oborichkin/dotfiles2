@@ -14,6 +14,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_DIRS="$XDG_DATA_DIRS:/var/lib/flatpak/exports/share:$HOME/.local/share/flatpak/exports/share"
 
 # Ansible
 export ANSIBLE_HOME="${XDG_CONFIG_HOME}/ansible"
@@ -41,4 +42,6 @@ export PATH="$PATH:$GOPATH/bin"
 export IMAPFILTER_HOME="$XDG_CONFIG_HOME/imapfilter"
 
 source $XDG_DATA_HOME/secrets
+
+export SSH_AUTH_SOCK=/home/oborin_p/.bitwarden-ssh-agent.sock
 

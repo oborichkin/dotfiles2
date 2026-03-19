@@ -1,0 +1,6 @@
+#!/bin/bash
+
+scrot /tmp/screen.png
+convert /tmp/screen.png -blur 0x8 /tmp/blur.png
+rm /tmp/screen.png
+i3lock -i /tmp/blur.png

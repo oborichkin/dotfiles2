@@ -3,7 +3,7 @@
 set -e
 
 declare -A projects
-PROJECT_DIRS="$HOME/work/src:$HOME/dox/github"
+PROJECT_DIRS="$HOME/Source"
 
 IFS=:
 for dir in $PROJECT_DIRS; do
@@ -14,4 +14,4 @@ done
 
 name=$(printf "%s\n" ${!projects[*]} | rofi -dmenu)
 
-[ -z "$name" ] && exit 0 || code ${projects[$name]}
+[ -z "$name" ] && exit 0 || $TERMINAL -e nvim ${projects[$name]}

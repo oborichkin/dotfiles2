@@ -2,6 +2,10 @@
 super + Return
 	alacritty
 
+# lock screen
+super + l
+    lock-screen
+
 # program launcher
 alt + @space
 	launcher

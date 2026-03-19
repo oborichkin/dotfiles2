@@ -29,3 +29,5 @@ compinit
 _comp_options+=(globdots)		# Include hidden files.
 
 source $XDG_CONFIG_HOME/aliases
+
+export PATH="$HOME/.opencode/bin:$PATH"

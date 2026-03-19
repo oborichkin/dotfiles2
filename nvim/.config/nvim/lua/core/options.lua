@@ -25,3 +25,5 @@ opt.splitbelow = true
 opt.splitright = true
 opt.scrolloff = 8
 opt.sidescrolloff = 8
+opt.list = true
+opt.listchars = "tab:»·,nbsp:·,space:␣,eol:↵,extends:»,precedes:«,trail:•"
