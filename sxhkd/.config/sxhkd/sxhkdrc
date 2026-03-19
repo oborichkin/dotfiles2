@@ -3,8 +3,8 @@ super + Return
 	alacritty
 
 # lock screen
-super + l
-    lock-screen
+super + shift + x
+	lock-screen
 
 # program launcher
 alt + @space
