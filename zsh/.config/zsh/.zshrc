@@ -31,9 +31,16 @@ bindkey "\e[F"    end-of-line
 
 # History in cache directory:
 setopt hist_ignore_all_dups
+
+# Enable immediate appending and sharing
+setopt APPEND_HISTORY      # Append history rather than overwriting
+setopt INC_APPEND_HISTORY  # Write to history file immediately after each command
+setopt SHARE_HISTORY       # Share history between all concurrent Zsh sessions
+
 HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.cache/zsh/history
+
 bindkey '^R' history-incremental-search-backward
 
 # Basic auto/tab complete:
