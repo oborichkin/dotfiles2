@@ -1,27 +1,8 @@
 set $mod Mod4
 
-# Forest Color Scheme (Birch Tree Inspired)
-set $forest-bg #1a1e1d
-set $forest-dark #2d322f
-set $forest-muted #3d4a42
-set $forest-green #4a6754
-set $forest-light #5d7a64
-set $forest-birch #d4e0d8
-set $forest-accent #6b8e7a
-set $forest-alert #8b6b6b
-
-font pango:BigBlueTermPlus Nerd Font,Cascadia Code,monospace 16
-
 # Gaps
 gaps inner 10
-gaps outer 5
-
-# Window border colors (Forest theme)
-client.focused $forest-green $forest-green $forest-birch $forest-muted
-client.focused_inactive $forest-muted $forest-muted $forest-birch $forest-muted
-client.unfocused $forest-dark $forest-dark $forest-birch $forest-muted
-client.urgent $forest-alert $forest-alert $forest-birch $forest-muted
-client.placeholder $forest-bg $forest-bg $forest-birch $forest-muted
+gaps outer 10
 
 floating_modifier $mod
 
@@ -84,7 +65,7 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 
 # essential applications
 bindsym $mod+Return exec alacritty
-bindsym $mod+space exec launcher
+bindsym Mod1+space exec dmenu_run
 bindsym $mod+Shift+x exec lock-screen
 bindsym $mod+Shift+e exec i3-msg exit
 bindsym $mod+Shift+q exec xdotool getwindowfocus windowclose
@@ -103,19 +84,6 @@ default_border pixel 0
 default_floating_border pixel 0
 
 bar {
+    position top
     status_command i3status
-    
-    # Forest colors for bar
-    colors {
-        background $forest-bg
-        statusline $forest-birch
-        separator $forest-muted
-        
-        # border background text
-        focused_workspace $forest-green $forest-green $forest-birch
-        active_workspace $forest-light $forest-light $forest-birch
-        inactive_workspace $forest-dark $forest-dark $forest-muted
-        urgent_workspace $forest-alert $forest-alert $forest-birch
-        binding_mode $forest-accent $forest-accent $forest-birch
-    }
 }
