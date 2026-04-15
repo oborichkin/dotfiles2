@@ -1,8 +1,11 @@
 set $mod Mod4
-
 # Gaps
 gaps inner 10
 gaps outer 10
+
+focus_follows_mouse no
+focus_on_window_activation none
+mouse_warping none
 
 floating_modifier $mod
 
