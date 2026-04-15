@@ -75,7 +75,6 @@ bindsym Print exec screenshot
 bindsym Shift+Print exec screenshot region
 
 # utilities
-bindsym $mod+Shift+m exec rofi -modi emoji -show emoji -no-disable-history
 bindsym $mod+Shift+p exec workon
 
 for_window [class="Alacritty"] floating enable

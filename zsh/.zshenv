@@ -6,7 +6,7 @@ export PATH="$PATH:/snap/bin:$(du "$HOME/.local/bin" | cut -f2 | paste -sd ':')"
 # Default programs:
 export EDITOR="nvim"
 export TERMINAL="alacritty"
-export BROWSER="brave-browser"
+export BROWSER="firefox"
 export READER="zathura"
 
 # ~/ Clean-up:

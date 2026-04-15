@@ -63,4 +63,4 @@ source $XDG_CONFIG_HOME/aliases
 
 export PATH="$HOME/.opencode/bin:$PATH"
 
-. "$HOME/.local/share/../bin/env"
+. "$HOME/.local/bin/env"
