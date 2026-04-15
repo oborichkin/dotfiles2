@@ -74,10 +74,20 @@ bindsym $mod+Shift+q exec xdotool getwindowfocus windowclose
 bindsym Print exec screenshot
 bindsym Shift+Print exec screenshot region
 
+# autostart
+exec_always --no-startup-id dex -a
+exec_always --no-startup-id setxkbmap -layout us,ru -option 'grp:caps_toggle'
+exec_always --no-startup-id nitrogen --restore
+exec_always --no-startup-id xset s off
+exec_always --no-startup-id xset -dpms
+exec_always --no-startup-id xset s noblank
+exec_always --no-startup-id xset r rate 210 40
+
 # utilities
 bindsym $mod+Shift+p exec workon
 
 for_window [class="Alacritty"] floating enable
+for_window [class="Gnome-terminal"] floating enable
 
 default_border pixel 0
 default_floating_border pixel 0

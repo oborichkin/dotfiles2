@@ -1,5 +1,5 @@
 all: tpm
-	stow i3 nvim scripts sxhkd tmux x zsh -t $$HOME
+	stow i3 alacritty nvim scripts sxhkd tmux x zsh -t $$HOME
 
 tpm: ~/.config/tmux/plugins/tpm
 ~/.config/tmux/plugins/tpm:
@@ -26,4 +26,5 @@ deps:
 		suckless-tools \
 		scrot \
 		maim \
-		xdotool
+		xdotool \
+		pasystray
