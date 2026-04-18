@@ -1,5 +1,0 @@
-[Desktop Entry]
-Exec=/usr/bin/sxhkd
-Name=sxhkd
-Comment=Simple X hotkey daemon
-Type=Application

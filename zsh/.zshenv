@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # Adds `~/.local/bin` to $PATH
-export PATH="$PATH:/snap/bin:$(du "$HOME/.local/bin" | cut -f2 | paste -sd ':')"
+export PATH="/snap/bin:$(du "$HOME/.local/bin" | cut -f2 | paste -sd ':'):$PATH"
 
 # Default programs:
 export EDITOR="nvim"
@@ -37,7 +37,7 @@ export VAGRANT_HOME="$XDG_DATA_HOME"/vagrant
 export VAGRANT_ALIAS_FILE="$XDG_DATA_HOME"/vagrant/aliases
 
 export GOPATH="$XDG_DATA_HOME"/go
-export PATH="$PATH:$GOPATH/bin"
+export PATH="$GOPATH/bin:$PATH"
 
 export IMAPFILTER_HOME="$XDG_CONFIG_HOME/imapfilter"
 
